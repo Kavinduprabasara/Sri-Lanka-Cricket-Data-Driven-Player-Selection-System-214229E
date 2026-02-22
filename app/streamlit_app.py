@@ -8,52 +8,58 @@ from datetime import datetime, timedelta
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # APP CONFIG & CSS STYLING
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-st.set_page_config(page_title="SL Cricket Analytics", page_icon="🦁", layout="wide")
+st.set_page_config(
+    page_title="SL Cricket Analytics", 
+    page_icon="🦁", 
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 def local_css():
     st.markdown("""
     <style>
     /* Global background & text */
     .stApp {
-        background-color: #0a0e1a;
-        color: #ffffff;
+        background-color: #f8fafc;
+        color: #0f172a;
     }
     
     /* Metrics / Cards */
     div[data-testid="stMetricValue"] {
-        color: #f5c518;
+        color: #2563eb;
     }
     div[data-testid="stMetricLabel"] {
-        color: #64748b;
+        color: #475569;
     }
     
     /* Custom container styling */
     .custom-container {
-        background-color: #111827;
-        border: 1px solid #1a3a6e;
+        background-color: #ffffff;
+        border: 1px solid #bfdbfe;
         border-radius: 8px;
         padding: 16px;
         margin-bottom: 16px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         transition: border-color 0.3s, box-shadow 0.3s;
     }
     .custom-container:hover {
-        border-color: #f5c518;
-        box-shadow: 0 0 10px rgba(245, 197, 24, 0.3);
+        border-color: #2563eb;
+        box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
     }
     
-    .rating-excellent { color: #22c55e; font-weight: bold; }
-    .rating-good { color: #3b82f6; font-weight: bold; }
-    .rating-average { color: #f59e0b; font-weight: bold; }
-    .rating-poor { color: #ef4444; font-weight: bold; }
+    .rating-excellent { color: #16a34a; font-weight: bold; }
+    .rating-good { color: #2563eb; font-weight: bold; }
+    .rating-average { color: #d97706; font-weight: bold; }
+    .rating-poor { color: #dc2626; font-weight: bold; }
     
     .role-badge {
         background-color: #eff6ff;
-        color: #ffffff;
+        color: #0f172a;
         padding: 4px 8px;
         border-radius: 4px;
         font-size: 0.8em;
         text-transform: uppercase;
+        border: 1px solid #bfdbfe;
     }
     </style>
     """, unsafe_allow_html=True)
